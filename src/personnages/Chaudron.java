@@ -10,21 +10,20 @@ public class Chaudron {
 		}
 		return true;
 	}
-	
 
 	public Chaudron() {
-		
-	}
 
+	}
 
 	public void remplirChaudron(int quantite, int forcePotion) {
 		this.quantitePotion += quantite;
 		this.forcePotion = forcePotion;
 
 	}
+
 	public int prendreLouche() {
-		quantitePotion -=1;
+		quantitePotion -= 1;
 		return forcePotion;
-		
+
 	}
 }

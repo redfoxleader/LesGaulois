@@ -9,7 +9,7 @@ public class Druide {
 		this.nom = nom;
 		this.force = force;
 		this.chaudron = new Chaudron();
-		
+
 	}
 
 	public String getNom() {
@@ -29,18 +29,21 @@ public class Druide {
 		parler("J'ai concocté " + quantite + " doses de potion magique. Elle a une force de " + forcePotion + ".");
 
 	}
-	public void booster( Gaulois gaulois) {
+
+	public void booster(Gaulois gaulois) {
 		String nomGaulois = gaulois.getNom();
-		if (chaudron.resterPotion()){
-			if (nomGaulois== "Obélix") {
+		if (chaudron.resterPotion()) {
+			if (nomGaulois == "Obélix") {
 				parler("Non " + nomGaulois + " Non !...Et tu le sais très bien !");
 			} else {
 				int forcePotion = chaudron.prendreLouche();
 				gaulois.boirePotion(forcePotion);
 				parler("Tiens " + nomGaulois + " un peu de potion magique.");
-				
+
 			}
-			
-		}	else {parler("Désolé " + nomGaulois + " il n'y a plus une seule goutte de potion.");}
+
+		} else {
+			parler("Désolé " + nomGaulois + " il n'y a plus une seule goutte de potion.");
+		}
 	}
 }
